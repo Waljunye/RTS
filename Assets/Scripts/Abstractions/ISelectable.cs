@@ -8,7 +8,5 @@ namespace Abstractions
         float MaxHealth { get; }
         Sprite Icon { get; }
 
-        void OnSelect();
-        void UnSelect();
     }
 }

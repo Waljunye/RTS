@@ -11,7 +11,6 @@ namespace Core
 
         [SerializeField] private GameObject _unitPrefab;
         [SerializeField] private Transform _unitsParent;
-        [SerializeField] private GameObject _selectedChildObject;
 
         [SerializeField] private float _maxHealth = 1000;
         [SerializeField] private Sprite _icon;
@@ -26,14 +25,5 @@ namespace Core
                 _unitsParent);
         }
 
-        public void OnSelect()
-        {
-            _selectedChildObject.SetActive(true);
-        }
-
-        public void UnSelect()
-        {
-            _selectedChildObject.SetActive(false);
-        }
     }
 }

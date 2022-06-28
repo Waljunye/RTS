@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 47868610}
   - component: {fileID: 47868611}
+  - component: {fileID: 47868612}
   m_Layer: 0
   m_Name: MouseInteractionPresenter
   m_TagString: Untagged
@@ -168,6 +169,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 963194227}
   _selectedObject: {fileID: 11400000, guid: 7141aae4b16134e49af0215b6da77bcf, type: 2}
+--- !u!114 &47868612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47868609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a354f187bda743a4fba4eb456fcefb7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectable: {fileID: 11400000, guid: 7141aae4b16134e49af0215b6da77bcf, type: 2}
 --- !u!1 &166552224
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1005,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!23 &838762235 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 873913091957875532, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+  m_PrefabInstance: {fileID: 784151482173790674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1093,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 59.291, y: 0, z: 0}
+--- !u!23 &1014263950 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 873913091957875530, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+  m_PrefabInstance: {fileID: 784151482173790674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1081765595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,6 +1298,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119816376}
   m_CullTransparentMesh: 1
+--- !u!23 &1121286289 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 873913091957875534, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+  m_PrefabInstance: {fileID: 784151482173790674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1152963226 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5122495238217686499, guid: 5dd235a43d36f9347a1a35df441f10d9, type: 3}
@@ -1983,6 +2012,70 @@ PrefabInstance:
       propertyPath: m_Name
       value: CliffBig01
       objectReference: {fileID: 0}
+    - target: {fileID: 873913091957875534, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873913091957875534, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873913091957875534, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 873913091957875534, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873913091957875534, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 106f3ff43a17d4967a2b64c7a92e49ec, type: 2}
+    - target: {fileID: 873913091957875534, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 106f3ff43a17d4967a2b64c7a92e49ec, type: 2}
+    - target: {fileID: 6262483256404883314, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: _outlineWidth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262483256404883314, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: _outlineColor.b
+      value: 0.05873976
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262483256404883314, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: _outlineColor.g
+      value: 0.05873976
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262483256404883314, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: _outlineColor.r
+      value: 0.8301887
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262483256404883314, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: _materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262483256404883314, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: _materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 311313efa011949e98b6761d652ad13c, type: 2}
+    - target: {fileID: 6262483256404883314, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: _materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 106f3ff43a17d4967a2b64c7a92e49ec, type: 2}
+    - target: {fileID: 6262483256404883314, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: _renderers.Array.data[0]
+      value: 
+      objectReference: {fileID: 1121286289}
+    - target: {fileID: 6262483256404883314, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: _renderers.Array.data[1]
+      value: 
+      objectReference: {fileID: 838762235}
+    - target: {fileID: 6262483256404883314, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
+      propertyPath: _renderers.Array.data[2]
+      value: 
+      objectReference: {fileID: 1014263950}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db10fcde1b9af174d8ebda72d09cf3df, type: 3}
 --- !u!4 &1946390258651102493 stripped
