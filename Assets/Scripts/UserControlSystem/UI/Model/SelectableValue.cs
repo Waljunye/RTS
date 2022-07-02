@@ -1,7 +1,6 @@
 ﻿using System;
-using Abstractions;
 using UnityEngine;
-
+using Abstractions;
 namespace UserControlSystem
 {
     [CreateAssetMenu(fileName = nameof(SelectableValue), menuName = "Strategy Game/" + nameof(SelectableValue), order = 0)]
