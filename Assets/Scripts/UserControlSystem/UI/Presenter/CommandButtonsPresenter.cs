@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using Abstractions;
 using UserControlSystem;
+using Zenject;
 using System;
 
 public class CommandButtonsPresenter : MonoBehaviour
 {
     [SerializeField] private SelectableValue _selectable;
     [SerializeField] private CommandButtonsView _view;
-    [SerializeField] private AssetsContext _context;
+
+    [Zenject.Inject] private CommandsButtonModel _model;
 
     private ISelectable _currentSelectable;
 
     private void Start()
     {
+        _view.OnClick += _model.onCommandButtonClicked;
+        _model.OnCommandSent += _view.UnblockAllInteractions;
+        _model.OnCommandAccepted += _view.BlockInteractions;
+        _model.OnCommandCancel += _view.UnblockAllInteractions;
+
         _selectable.OnSelected += OnSelected;
         OnSelected(_selectable.CurrentValue);
-        _view.OnClick += OnButtonClick;
     }
 
     private void OnSelected(ISelectable selectable)
@@ -36,7 +42,8 @@ public class CommandButtonsPresenter : MonoBehaviour
             _view.MakeLayout(commandExecutors);
         }
     }
-    private void OnButtonClick(ICommandExecutor executor)
+    //PREVIOUS REALISATION. EXPIRED
+   /* private void OnButtonClick(ICommandExecutor executor)
     {
         var unitProducer = executor as CommandExecutorBase<IProduceUnitCommand>;
         var unitAttacker = executor as CommandExecutorBase<IAttackCommand>;
@@ -71,6 +78,6 @@ public class CommandButtonsPresenter : MonoBehaviour
         }
         if (executed) return;
         throw new ApplicationException($"{nameof(CommandButtonsPresenter)}.{nameof(OnButtonClick)}Unknown type of commands executor: { executor.GetType().FullName }!");
-    }
+    }*/
 
 }
