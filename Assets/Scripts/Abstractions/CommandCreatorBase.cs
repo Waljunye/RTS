@@ -11,7 +11,6 @@ public abstract class CommandCreatorBase<T> where T : ICommand
         Debug.Log(commandExecutor as CommandExecutorBase<T>);
         if (specificCommandExecutor != null)
         {
-            Debug.Log("Asdasdcffevjnierfvuienvijrfedivujernveriuvneriujvnuiejr");
             SpecificCommandCreation(callback);
         }
         return commandExecutor;
