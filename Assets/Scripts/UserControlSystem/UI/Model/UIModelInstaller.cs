@@ -21,6 +21,7 @@ public class UIModelInstaller : MonoInstaller
             .To<PatrolCommandCreator>().AsTransient();
         Container.Bind<CommandCreatorBase<IStopCommand>>()
             .To<StopCommandCreator>().AsTransient();
+        Container.Bind<Vector3Value>().AsTransient();
 
         Container.Bind<CommandsButtonModel>().AsTransient();
     }
