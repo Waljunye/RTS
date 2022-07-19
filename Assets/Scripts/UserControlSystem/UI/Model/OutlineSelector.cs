@@ -8,7 +8,7 @@ namespace Outlines
 {
     public class OutlineSelector : MonoBehaviour
     {
-        [SerializeField] private MeshRenderer[] _renderers;
+        [SerializeField] private Renderer[] _renderers;
         [SerializeField] private Material[] _materials;
 
         private bool _isSelectedCache;
