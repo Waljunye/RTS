@@ -40,6 +40,7 @@ public class CommandsButtonModel
     }
     public void executeCommandWrapper(ICommandExecutor commandExecutor, object command)
     {
+        Debug.Log($"Executed command Wrapper {commandExecutor.GetType()}");
         commandExecutor.ExecuteCommand(command);
         _isCommandPending = false;
         OnCommandSent?.Invoke();
@@ -56,5 +57,7 @@ public class CommandsButtonModel
         _mover.CancelCommand();
         _patroler.CancelCommand();
         _stoper.CancelCommand();
+
+        OnCommandCancel?.Invoke();
     }
 }

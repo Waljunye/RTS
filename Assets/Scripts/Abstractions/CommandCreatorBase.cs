@@ -7,9 +7,11 @@ public abstract class CommandCreatorBase<T> where T : ICommand
 {
     public ICommandExecutor ProcessCommandExecutor(ICommandExecutor commandExecutor, Action<T> callback)
     {
-        var specificCommandExecutor = commandExecutor as CommandCreatorBase<T>;
+        var specificCommandExecutor = commandExecutor as CommandExecutorBase<T>;
+        Debug.Log(commandExecutor as CommandExecutorBase<T>);
         if (specificCommandExecutor != null)
         {
+            Debug.Log("Asdasdcffevjnierfvuienvijrfedivujernveriuvneriujvnuiejr");
             SpecificCommandCreation(callback);
         }
         return commandExecutor;

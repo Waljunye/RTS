@@ -32,6 +32,10 @@ public class CommandButtonsPresenter : MonoBehaviour
         {
             return;
         }
+        if(_currentSelectable != null)
+        {
+            _model.OnSelectedChanged();
+        }
         _currentSelectable = selectable;
 
         _view.Clear();

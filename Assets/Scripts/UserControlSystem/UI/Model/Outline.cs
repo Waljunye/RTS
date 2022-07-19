@@ -180,8 +180,6 @@ namespace Outlines
 
                 // Remove outline shaders
                 var materials = renderer.sharedMaterials.ToList();
-                Debug.Log("Desabled");
-                Debug.Log(materials);
                 materials.Remove(outlineMaskMaterial);
                 materials.Remove(outlineFillMaterial);
 
@@ -191,7 +189,6 @@ namespace Outlines
 
         void OnDestroy()
         {
-            Debug.Log("Destroyed");
             // Destroy material instances
             Destroy(outlineMaskMaterial);
             Destroy(outlineFillMaterial);

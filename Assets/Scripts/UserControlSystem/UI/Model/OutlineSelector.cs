@@ -28,8 +28,6 @@ namespace Outlines
                     foreach(Material material in _materials)
                     {
                         materialList.Add(material);
-                        Debug.Log(materialList);
-                        materialList.ForEach(e => Debug.Log(e));
                     }
                 }
                 else
