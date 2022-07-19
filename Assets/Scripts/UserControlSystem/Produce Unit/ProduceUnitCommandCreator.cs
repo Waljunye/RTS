@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class ProduceUnitCommandCreate : CommandCreatorBase<IProduceUnitCommand>
+public class ProduceUnitCommandCreator : CommandCreatorBase<IProduceUnitCommand>
 {
     [Inject] private AssetsContext _context;
 

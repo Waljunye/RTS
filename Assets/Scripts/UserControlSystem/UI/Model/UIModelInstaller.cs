@@ -6,13 +6,15 @@ using Zenject;
 public class UIModelInstaller : MonoInstaller
 {
     [SerializeField] private AssetsContext _legacyContext;
+    [SerializeField] private Vector3Value _vector3Value;
 
     public override void InstallBindings()
     {
         Container.Bind<AssetsContext>().FromInstance(_legacyContext);
+        Container.Bind<Vector3Value>().FromInstance(_vector3Value);
 
         Container.Bind<CommandCreatorBase<IProduceUnitCommand>>()
-            .To<ProduceUnitCommandCreate>().AsTransient();
+            .To<ProduceUnitCommandCreator>().AsTransient();
         Container.Bind<CommandCreatorBase<IAttackCommand>>()
             .To<AttackCommandCreator>().AsTransient();
         Container.Bind<CommandCreatorBase<IMoveCommand>>()
@@ -21,7 +23,6 @@ public class UIModelInstaller : MonoInstaller
             .To<PatrolCommandCreator>().AsTransient();
         Container.Bind<CommandCreatorBase<IStopCommand>>()
             .To<StopCommandCreator>().AsTransient();
-        Container.Bind<Vector3Value>().AsTransient();
 
         Container.Bind<CommandsButtonModel>().AsTransient();
     }

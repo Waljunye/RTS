@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class CommandButtonsView : MonoBehaviour
 {
-    public event Action<ICommandExecutor> OnClick;
+    public Action<ICommandExecutor> OnClick;
 
     [SerializeField] private GameObject _attackButton;
     [SerializeField] private GameObject _moveButton;
@@ -22,15 +22,15 @@ public class CommandButtonsView : MonoBehaviour
         _buttonsByExecutorType = new Dictionary<Type, GameObject>();
 
         _buttonsByExecutorType
-        .Add(typeof(CommandExecutorBase<IAttackCommand>), _attackButton);
+            .Add(typeof(CommandExecutorBase<IAttackCommand>), _attackButton);
         _buttonsByExecutorType
-        .Add(typeof(CommandExecutorBase<IMoveCommand>), _moveButton);
+            .Add(typeof(CommandExecutorBase<IMoveCommand>), _moveButton);
         _buttonsByExecutorType
-        .Add(typeof(CommandExecutorBase<IPatrolCommand>), _patrolButton);
+            .Add(typeof(CommandExecutorBase<IPatrolCommand>), _patrolButton);
         _buttonsByExecutorType
-        .Add(typeof(CommandExecutorBase<IStopCommand>), _stopButton);
+            .Add(typeof(CommandExecutorBase<IStopCommand>), _stopButton);
         _buttonsByExecutorType
-        .Add(typeof(CommandExecutorBase<IProduceUnitCommand>),
+            .Add(typeof(CommandExecutorBase<IProduceUnitCommand>),
         _produceUnitButton);
     }
     public void BlockInteractions(ICommandExecutor commandExecutor)
@@ -40,8 +40,8 @@ public class CommandButtonsView : MonoBehaviour
             .GetComponent<Selectable>()
             .interactable = false;
     }
-    public void UnblockAllInteractions() => setinteractible(true);
-    private void setinteractible(bool value)
+    public void UnblockAllInteractions() => SetInteractible(true);
+    private void SetInteractible(bool value)
     {
         _attackButton.GetComponent<Selectable>().interactable = value;
         _moveButton.GetComponent<Selectable>().interactable = value;
@@ -51,22 +51,15 @@ public class CommandButtonsView : MonoBehaviour
     }
     private GameObject getButtonGameObjectByType(Type buttonExecutorType)
     {
-        return _buttonsByExecutorType
-            .Where(
-            type => type.Key.IsAssignableFrom(buttonExecutorType))
-            .First()
-            .Value;
+        return  _buttonsByExecutorType
+                .First(type => type.Key.IsAssignableFrom(buttonExecutorType))
+                .Value;
     }
     public void MakeLayout(List <ICommandExecutor> commandExecutors)
     {
         foreach(var commandExecutor in commandExecutors)
         {
-            var buttonGameObject = _buttonsByExecutorType
-                .Where(type => type
-                    .Key
-                    .IsAssignableFrom(commandExecutor.GetType()))
-                .First()
-                .Value;
+            var buttonGameObject = getButtonGameObjectByType(commandExecutor.GetType());
             buttonGameObject.SetActive(true);
             var button = buttonGameObject.GetComponent<Button>();
             button.onClick.AddListener(() => OnClick?.Invoke(commandExecutor));

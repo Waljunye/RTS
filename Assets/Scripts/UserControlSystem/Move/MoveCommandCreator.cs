@@ -17,7 +17,7 @@ public class MoveCommandCreator : CommandCreatorBase<IMoveCommand>
     }
     private void OnNewValue(Vector3 groundClick)
     {
-        Debug.Log("NewValue");
+        Debug.Log("MoveCommandCreator.OnNewValue");
         _creationCallback?.Invoke(_context.inject(new MoveCommand(groundClick)));
         _creationCallback = null;
     }
