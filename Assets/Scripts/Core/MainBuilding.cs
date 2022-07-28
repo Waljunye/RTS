@@ -23,5 +23,9 @@ namespace Core
             Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
         }
 
+        public GameObject GetGameObject()
+        {
+            return gameObject;
+        }
     }
 }

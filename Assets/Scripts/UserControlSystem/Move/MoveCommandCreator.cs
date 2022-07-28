@@ -6,7 +6,7 @@ using Zenject;
 
 public class MoveCommandCreator : CommandCreatorBase<IMoveCommand>
 {
-    [Inject] public AssetsContext _context;
+    [Inject] private AssetsContext _context;
 
     private Action<IMoveCommand> _creationCallback;
 
@@ -17,8 +17,7 @@ public class MoveCommandCreator : CommandCreatorBase<IMoveCommand>
     }
     private void OnNewValue(Vector3 groundClick)
     {
-        Debug.Log(_creationCallback);
-        _creationCallback.Invoke(_context.inject(new MoveCommand(groundClick)));
+        _creationCallback?.Invoke(_context.inject(new MoveCommand(groundClick)));
         _creationCallback = null;
     }
     protected override void SpecificCommandCreation(Action<IMoveCommand> callback)

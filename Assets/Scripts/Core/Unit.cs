@@ -15,4 +15,9 @@ public class Unit : MonoBehaviour, ISelectable
     [SerializeField] private Sprite _icon;
 
     private float _health = 1000;
+
+    public GameObject GetGameObject()
+    {
+        return gameObject;
+    }
 }

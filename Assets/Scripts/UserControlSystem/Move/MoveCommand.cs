@@ -8,7 +8,6 @@ public class MoveCommand : IMoveCommand
 
     public MoveCommand(Vector3 target)
     {
-        Debug.Log($"target chosed at {target}");
         Target = target;
     }
 }
